@@ -32,31 +32,26 @@ Run a for loop till the length of the password and in each iteration choose a ra
 import string
 import random
  
-# Getting password length
-length = int(input("Enter password length: "))
- 
+ try:
+        num_passwords = int(input("Enter the number of passwords to generate: "))
+        password_length = int(input("Enter the length of each password: "))
+        
+        if num_passwords <= 0 or password_length <= 0:
+            raise ValueError("Number of passwords and length must be positive integers.")
+        
+        generated_passwords = generate_multiple_passwords(num_passwords, password_length)
+        
+        print("\nGenerated Passwords:")
+        for password in generated_passwords:
+            print(password)
 
- 
-
-Output
-
-Strong Password Generator Only by entering the size of password
-Implementation
 
 
-# import modules
-import string
-import random
- 
- 
-# store all characters in lists 
-s1 = list(string.ascii_lowercase)
-s2 = list(string.ascii_uppercase)
-s3 = list(string.digits)
-s4 = list(string.punctuation)
- 
- 
-# Ask user about the number of characters
-user_input = input("How many characters do you want in your password? ")
- 
- 
+OUTPUT:
+
+Enter the number of passwords to generate: 2
+Enter the length of each password: 10
+
+Generated Passwords:
+kXvEtt*?{[
+QY)rz_$)?+
